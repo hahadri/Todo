@@ -10,9 +10,9 @@
 		<relativePath />
 	</parent>
 	<groupId>xyz.falsebit.todo</groupId>
-	<artifactId>toDo</artifactId>
+	<artifactId>todo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>toDo</name>
+	<name>todo</name>
 	<description>Freestyle Java project</description>
 	<packaging>pom</packaging>
 	<properties>
@@ -26,6 +26,14 @@
 	</modules>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -44,6 +52,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
