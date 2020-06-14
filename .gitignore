@@ -4,14 +4,9 @@ mvnw
 mvnw.cmd
 target/
 !.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**
-!**/src/test/**
 
-### STS ###
-.apt_generated
+.idea
+
 .classpath
-.factorypath
 .project
-.settings
-.springBeans
-.sts4-cache
+*.iml
