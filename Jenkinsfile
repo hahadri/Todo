@@ -7,7 +7,7 @@ pipeline {
     stages  {
         stage('Checkout') {
         	steps {
-            	git 'https://github.com/hahadri/BankManagement.git'
+            	git 'https://github.com/hahadri/Todo.git'
         	}
         }
         stage('Build') {
