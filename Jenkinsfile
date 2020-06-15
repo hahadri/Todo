@@ -21,13 +21,18 @@ pipeline {
             }
         }
         stage('Build and publish image to DockerHube') {
-            docker.withRegistry('https://registry.example.com', 'dockerhub') {
+            steps
+                    {
+                        script {
+                            docker.withRegistry('https://registry.example.com', 'dockerhub') {
 
-                def customImage = docker.build("todo")
+                                def customImage = docker.build("todo")
 
-                /* Push the container to the custom Registry */
-                customImage.push()
-            }
+                                /* Push the container to the custom Registry */
+                                customImage.push()
+                            }
+                        }
+                    }
         }
 
     }
