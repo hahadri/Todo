@@ -24,7 +24,7 @@ pipeline {
             steps
                     {
                         script {
-                            withDockerRegistry([credentialsId: 'dockerhub', url: "https://hub.docker.com/"]) {
+                            withDockerRegistry([credentialsId: 'dockerhub', url: "https://docker.com"]) {
 
                                 def customImage = docker.build("todo:${env.BUILD_ID}")
 
