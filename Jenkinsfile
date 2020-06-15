@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/hahadri/Todo.git'
+                checkout scm
             }
         }
         stage('Build') {
@@ -24,9 +24,9 @@ pipeline {
             steps
                     {
                         script {
-                            docker.withRegistry('https://registry.example.com', 'dockerhub') {
+                            withDockerRegistry('https://registry.example.com', 'dockerhub') {
 
-                                def customImage = docker.build("todo")
+                                def customImage = docker.build("todo:${env.BUILD_ID}")
 
                                 /* Push the container to the custom Registry */
                                 customImage.push()
